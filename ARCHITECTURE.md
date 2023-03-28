@@ -4,6 +4,20 @@
 
 Tiny Quizzer's architecture consists of a frontend built using Flutter for cross-platform mobile app compatibility and a backend implemented in Python using the Flask web framework. The backend serves as a RESTful API, which the frontend communicates with to request and receive data.
 
+```mermaid
+graph TB
+  subgraph Runtime
+    A[Frontend - Flutter] --> B[Backend - Flask]
+    B --> C[AI Model - GPT-3]
+    B --> D[MongoDB Database]
+    E[Web Server] --> B
+  end
+  subgraph Tiny Quizzer
+    G[Continuous Integration & Deployment - GitLab CI/CD] --> Runtime
+  end
+
+  ```
+
 ## Frontend
 
 ### Flutter
