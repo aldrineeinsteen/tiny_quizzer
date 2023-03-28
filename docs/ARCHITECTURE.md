@@ -7,10 +7,14 @@ Tiny Quizzer's architecture consists of a frontend built using Flutter for cross
 ```mermaid
 graph TB
   subgraph Runtime [Deployed on Cloud Services]
-    A[Frontend - Flutter] --> B[Backend - Flask]
-    B --> C[AI Model - GPT-3]
-    B --> D[MongoDB Database]
-    E[Web Server] --> B
+    A[Frontend - Flutter] --> W
+    C[AI Model - GPT-3]
+    D[MongoDB Database]
+  end
+  subgraph W[Web Server]
+    N[Ngnix - Reverse Proxy] --> B[Backend - Flask App]
+    B --> C
+    B --> D
   end
   subgraph Tiny Quizzer
     G[Continuous Integration & Deployment - GitLab CI/CD] --> Runtime
