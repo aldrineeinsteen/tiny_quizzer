@@ -64,3 +64,43 @@ graph TB
 
 -   GitLab CI/CD is used to automate the testing and deployment process.
 -   The pipeline includes steps for building the Flutter app, running backend tests, and deploying the application to the cloud provider.
+
+## Technical Architecture
+
+### System Context
+
+The System Context in the C4 model is the highest level of abstraction, providing a high-level view of the system and its interaction with external entities. Here's the System Context diagram for Tiny Quizzer using Mermaid:
+
+```mermaid
+C4Context
+  title System Context diagram for Tiny Quizzer
+
+    Person(administrator, "Administrators", "An internal user who is responsible for administration and maintenance.")
+    Person_Ext(student, "Students", "An external user who uses the application to practice and improve their exam skills.")
+    Person_Ext(tutor, "Tutors", "An external user who uses the application to create and manage quizzes for students.")
+
+  System_Boundary(b1, "Tiny Quizzer System") {
+    Container(frontend, "Frontend - Flutter", "Flutter", "Provides the user interface for students, tutors, and administrators.")
+    Container(backend, "Backend - Flask App", "Flask", "Handles API requests, processes data, and manages the AI model and database.")
+  }
+
+  System_Boundary(boundary_id, "External Services", "asdasd") {
+    SystemDb_Ext(database, "MongoDB Database", "MongoDB", "Stores quiz data and user information.")
+    SystemDb_Ext(ai_model, "AI Model - GPT-3", "GPT-3", "Generates questions for quizzes.")  
+  }
+  
+  
+
+  Rel_D(administrator, frontend, "Uses")
+  Rel_D(student, frontend, "Uses")
+  Rel_D(tutor, frontend, "Uses")
+
+  Rel_D(frontend, backend, "Sends API requests")
+  Rel_D(backend, database, "Reads from and writes to")
+  Rel_D(backend, ai_model, "Generates questions")
+
+```
+
+In this System Context diagram, the Tiny Quizzer System subgraph contains the main components of the application, including the Frontend (Flutter), Backend (Flask App), AI Model (GPT-3), Web Server, and MongoDB Database. The External Entities subgraph represents the interactions between the Tiny Quizzer System and external systems or users, such as Cloud Services, CI/CD pipeline (GitLab CI/CD), and the various user roles (Students, Tutors, and Administrators).
+
+This diagram provides a high-level view of the Tiny Quizzer system, its components, and its interactions with external entities, helping stakeholders understand the overall context of the solution.
