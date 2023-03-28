@@ -1,8 +1,8 @@
-## Tiny Quizzer
+# Tiny Quizzer
 
 Tiny Quizzer (tinyquizzer.com) is a mobile and web-based platform that offers a wide range of quizzes and practice tests for students preparing for various exams, including 11+ exams. It leverages advanced AI algorithms to generate high-quality, customized questions tailored to individual needs, helping students improve their skills and boost their confidence.
 
-### Features
+## Features
 
 1.  **AI-Powered Question Generation**: Tiny Quizzer uses state-of-the-art AI models to generate unique and challenging questions, providing students with fresh content and varied practice material.
     
@@ -15,3 +15,7 @@ Tiny Quizzer (tinyquizzer.com) is a mobile and web-based platform that offers a 
 5.  **Performance Analytics**: The platform provides detailed analytics and insights into each student's performance, helping them identify strengths and weaknesses and optimize their study plan.
     
 6.  **Community Support**: Tiny Quizzer features a community forum where students can discuss questions, share tips, and learn from each other's experiences.
+
+## Architecture
+
+For understanding the product architecture please refer to /docs/ARCHITECTURE.md .
