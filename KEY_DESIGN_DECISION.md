@@ -1,4 +1,4 @@
-# Key Design Decision: 
+# Key Design Decision
 
 # Monorepo Policy
 
