@@ -104,3 +104,41 @@ C4Context
 In this System Context diagram, the Tiny Quizzer System subgraph contains the main components of the application, including the Frontend (Flutter), Backend (Flask App), AI Model (GPT-3), Web Server, and MongoDB Database. The External Entities subgraph represents the interactions between the Tiny Quizzer System and external systems or users, such as Cloud Services, CI/CD pipeline (GitLab CI/CD), and the various user roles (Students, Tutors, and Administrators).
 
 This diagram provides a high-level view of the Tiny Quizzer system, its components, and its interactions with external entities, helping stakeholders understand the overall context of the solution.
+
+### Container
+
+The Container section of the C4 model provides a more detailed view of the system, showcasing the individual containers that make up the Tiny Quizzer application. Here's the PlantUML C4Container code and an explanation of the containers:
+
+```mermaid
+
+C4Container
+  title Container diagram for Tiny Quizzer
+
+  Person(administrator, "Administrators", "An internal user who is responsible for administration and maintenance.")
+  Person(student, "Students", "An external user who uses the application to practice and improve their exam skills.")
+  Person(tutor, "Tutors", "An external user who uses the application to create and manage quizzes for students.")
+
+  Container(frontend, "Frontend - Flutter", "Flutter", "Provides the user interface for students, tutors, and administrators.")
+  Container(backend, "Backend - Flask App", "Flask", "Handles API requests, processes data, and manages the AI model and database.")
+  SystemDb_Ext(database, "MongoDB Database", "MongoDB", "Stores quiz data and user information.")
+  SystemDb_Ext(ai_model, "AI Model - GPT-3", "GPT-3", "Generates questions for quizzes.")
+
+  Rel(administrator, frontend, "Uses")
+  Rel(student, frontend, "Uses")
+  Rel(tutor, frontend, "Uses")
+
+  Rel(frontend, backend, "Sends API requests")
+  Rel(backend, database, "Reads from and writes to")
+  Rel(backend, ai_model, "Generates questions")
+
+```
+
+In this Container diagram, we have the following containers for the Tiny Quizzer application:
+
+1. **Frontend - Flutter**: This container is responsible for providing the user interface for students, tutors, and administrators. It is built using Flutter, allowing the application to run on multiple platforms, such as web and mobile.
+
+2. **Backend - Flask App**: This container handles API requests from the frontend, processes data, and manages the AI model and the database. It is built using the Flask framework in Python, which provides flexibility and scalability.
+
+3. **MongoDB Database (External Service)**: This container represents the external MongoDB Database, which stores quiz data and user information. It is an external service that is not part of the Tiny Quizzer application, but it is used by the backend to store and retrieve data.
+
+4. **AI Model - GPT-3 (External Service)**: This container represents the external AI Model, which generates questions for quizzes using GPT-3. It is an external service that is not part of the Tiny Quizzer application but is used by the backend to generate questions.
