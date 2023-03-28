@@ -18,4 +18,4 @@ Tiny Quizzer (tinyquizzer.com) is a mobile and web-based platform that offers a 
 
 ## Architecture
 
-For understanding the product architecture please refer to /docs/ARCHITECTURE.md .
+For understanding the product architecture please refer to [ARCHITECTURE](/docs/ARCHITECTURE.md) .
